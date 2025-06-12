@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia dos Namorados</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .titulo-vermelho {
+            color: red;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 2.5rem;
+        }
+
+        .coraçao {
+            position: absolute;
+            color: pink;
+            font-size: 2rem;
+            animation: subir 5s linear;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        @keyframes subir {
+            0% {
+                transform: translateY(100vh) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .clique-aqui {
+            font-size: 24px;
+            margin-top: 20px;
+            text-align: center;
+            animation: piscar 1.2s infinite;
+        }
+
+        @keyframes piscar {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="titulo-vermelho">Feliz dia dos namorados 💓</h1>
+
+    <!-- Geração contínua de corações -->
+    <script>
+        function criarCoracao() {
+            const coracao = document.createElement("div");
+            coracao.classList.add("coraçao");
+            coracao.style.left = Math.random() * 100 + "vw";
+            coracao.style.animationDuration = (3 + Math.random() * 2) + "s";
+            coracao.style.fontSize = (16 + Math.random() * 24) + "px";
+            coracao.innerText = "💗";
+            document.body.appendChild(coracao);
+
+            setTimeout(() => {
+                coracao.remove();
+            }, 5000); // Remove após animação
+        }
+
+        // Cria 4 corações por segundo
+        setInterval(criarCoracao, 250);
+    </script>
+
+    <h2 class="titulo-vermelho">
+        <p>Eu te amo 💞</p>
+        <a href="file:///C:/Users/Dev_1o_Ano/Documents/%C3%A7aite/sitefofis.html">
+            <img src="img/coracao.png" width="20%">
+            <div class="clique-aqui">Clique aqui</div>
+        </a>
+    </h2>
+</body>
+</html>
